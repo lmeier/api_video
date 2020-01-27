@@ -30,10 +30,14 @@ and then from the client make a PUT to the URL that's returned with the video to
 
 To get my local shell 'client' to work with the Mux/google upload url, I had to include my IP as the cors_origin:
 
-```$ curl http://checkip.amazonaws.com
-69.215.150.193 ```
+```
+$ curl http://checkip.amazonaws.com
+69.215.150.193
+```
 
-``` curl localhost:4000/api/videos \-X POST -H "Content-Type: application/json"  -d '{ "video": {"new_asset_settings": {"playback_policy": "public"}, "cors_origin": "69.215.150.1"}}' ```
+``` 
+$ curl localhost:4000/api/videos \-X POST -H "Content-Type: application/json"  -d '{ "video": {"new_asset_settings": {"playback_policy": "public"}, "cors_origin": "69.215.150.1"}}'
+```
 
 A GET request to /api/videos returns a list of all uploaded videos:
 ```curl localhost:4000/api/videos  -X GET ```
